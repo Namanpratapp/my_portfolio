@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificates | Naman</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Clicker+Script&family=Cookie&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .topnav {
+      background-color: #111;
+      font-family: 'Cookie', cursive;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 50px;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      animation: slideInDown 1s ease;
+    }
+
+    .topnav .logo {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #f3f3f3;
+      font-family: 'Clicker Script', cursive;
+    }
+
+    .topnav nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .topnav nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #e91e63;
+      left: 0;
+      bottom: -4px;
+      transition: width 0.3s;
+    }
+
+    .topnav nav a:hover::after {
+      width: 100%;
+    }
+
+    .certificates-section {
+      background-color: #111;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(233, 30, 99, 0.5);
+      animation: fadeIn 1s ease-in-out;
+      text-align: center;
+    }
+
+    .certificates-section h1 {
+      font-size: 42px;
+      color: #e91e63;
+      margin-bottom: 40px;
+      font-weight: 700;
+      font-family: 'Clicker Script', cursive;
+      letter-spacing: 1.2px;
+    }
+
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .certificate-item {
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(233, 30, 99, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .certificate-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      cursor: pointer;
+    }
+
+    .certificate-item:hover img {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: inset 0 1px 0 #333;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 800px;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 45px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #e91e63;
+      text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .topnav {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 10px;
+      }
+
+      .topnav .logo {
+        font-size: 2rem;
+      }
+
+      .topnav nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .topnav nav a {
+        margin-left: 0;
+      }
+
+      .certificates-section {
+        margin: 40px 20px;
+        padding: 30px 20px;
+      }
+
+      .certificates-section h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topnav">
+    <div class="logo">Naman</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="certificate.html">Certificates</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <section class="certificates-section">
+    <h1>My Certificates</h1>
+    <div class="certificates-grid">
+      <div class="certificate-item"><img src="cert6.png" alt="Certificate 7"></div>
+      <div class="certificate-item"><img src="cert7.png" alt="Certificate 8"></div>
+      <div class="certificate-item"><img src="cert3.png" alt="Certificate 3"></div>
+      <div class="certificate-item"><img src="cert1.jpg" alt="Certificate 1"></div>
+      <div class="certificate-item"><img src="cert2.png" alt="Certificate 2"></div>
+      <div class="certificate-item"><img src="cert8.png" alt="Certificate 8"></div>
+      <div class="certificate-item"><img src="cert4.png" alt="Certificate 4"></div>
+      <div class="certificate-item"><img src="cert5.png" alt="Certificate 5"></div>
+      <div class="certificate-item"><img src="cert9.png" alt="Certificate 6"></div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Naman. All rights reserved.
+  </footer>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <!-- JavaScript for Modal -->
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.getElementsByClassName("close")[0];
+
+    document.querySelectorAll(".certificate-item img").forEach(img => {
+      img.addEventListener("click", function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+      });
+    });
+
+    closeBtn.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>

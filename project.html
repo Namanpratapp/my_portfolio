@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Clicker+Script&family=Cookie&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .topnav {
+      background-color: #111;
+      font-family: 'Cookie', cursive;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 50px;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      animation: slideInDown 1s ease;
+    }
+
+    .topnav .logo {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #f3f3f3;
+      font-family: 'Clicker Script', cursive;
+    }
+
+    .topnav nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .topnav nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #e91e63;
+      left: 0;
+      bottom: -4px;
+      transition: width 0.3s;
+    }
+
+    .topnav nav a:hover::after {
+      width: 100%;
+    }
+
+    .portfolio-section {
+      max-width: 900px;
+      margin: 60px auto 80px auto;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(233, 30, 99, 0.5);
+      background-color: #111;
+      animation: fadeIn 1s ease-in-out;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .portfolio-section h1 {
+      font-size: 42px;
+      color: #e91e63;
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-family: 'Clicker Script', cursive;
+      text-align: center;
+      letter-spacing: 1.2px;
+    }
+
+    .portfolio-section p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #ddd;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      text-align: center;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(233, 30, 99, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(233, 30, 99, 0.7);
+    }
+
+    .project-card h3 {
+      margin-bottom: 15px;
+      color: #e91e63;
+      font-family: 'Clicker Script', cursive;
+    }
+
+
+    .project-card img {
+  width: 100%;
+  height: 180px;         /* uniform height */
+  object-fit: cover;     /* crop to fit */
+  border-radius: 10px;   /* rounded edges */
+  margin-top: 15px;      /* spacing from text */
+}
+
+
+    .project-card p {
+      font-size: 16px;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: inset 0 1px 0 #333;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .topnav {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 10px;
+      }
+
+      .topnav .logo {
+        font-size: 2rem;
+      }
+
+      .topnav nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .topnav nav a {
+        margin-left: 0;
+      }
+
+      .portfolio-section {
+        margin: 40px 20px 60px 20px;
+        padding: 30px 20px;
+      }
+
+      .portfolio-section h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topnav">
+    <div class="logo">Naman</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="certificate.html">Certificates</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <section class="portfolio-section">
+    <h1>My Portfolio</h1>
+    <p>Welcome! Here you'll find a selection of projects showcasing my skills and passion for innovative digital solutions.</p>
+
+    <div class="projects">
+      <div class="project-card">
+        <h3>AI-Powered Healthcare Chatbot</h3>
+        <p>Developed a chatbot platform using AI to assist users in accessing medical advice quickly and efficiently.</p>
+      <a href="https://health-care-plum.vercel.app/" target="_blank">
+        <img src="b.png" alt="Healthcare">
+    </div></a>
+      <div class="project-card">
+        <h3>Disaster Management System</h3>
+        <p>Created a smart disaster management solution to help coordinate emergency responses effectively.</p>
+      <a href="https://disasterman.vercel.app/" target="_blank">
+    <img src="c.png" alt="Disaster Management">
+    </div></a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Naman. All rights reserved.
+  </footer>
+
+</body>
+</html>
